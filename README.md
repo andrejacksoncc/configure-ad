@@ -19,10 +19,15 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+- Create a Resource Group: Organize all related Azure resources (VMs, networking, etc.) in a single group.
+- Create a Virtual Network: Set up a dedicated network for your AD environment.
+- Deploy a Domain Controller VM: Create a Windows Server virtual machine to act as the domain controller.
+- Set Static Private IP for DC: Assign a static private IP to the domain controller so its address doesn’t change.
+- Deploy a Client VM: Create a Windows 10 (or similar) VM to act as a domain-joined client.
+- Configure DNS: Set the client’s DNS server to the domain controller’s private IP address.
+- Disable Firewall (for lab testing): Temporarily disable Windows Firewall on the domain controller to allow necessary traffic.
+- Verify Network Connectivity: Ensure the client can ping the DC’s private IP.
+- Check DNS Settings: Confirm the client uses the DC for DNS lookups.
 
 <h2>Deployment and Configuration Steps</h2>
 
