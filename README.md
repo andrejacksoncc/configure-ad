@@ -163,9 +163,10 @@ This tutorial outlines the implementation of on-premises Active Directory within
 </p>
 <br />
 
-<img width="80%" height="80%" alt="1" src="https://github.com/user-attachments/assets/794092de-b5c8-4315-b957-4b0e44bdd957" />
+<img width="80%" height="80%" alt="20" src="https://github.com/user-attachments/assets/f62a67c5-a8b2-4557-b166-b5e827f32778" />
 
-- Create a new resource group with these specifications.
+- Type in ipconfig /all.
+- DNS server should show DC-1's private IP address.
 </p>
 <br />
 
