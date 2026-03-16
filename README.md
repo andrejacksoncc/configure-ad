@@ -28,6 +28,16 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Disable Firewall (for lab testing): Temporarily disable Windows Firewall on the domain controller to allow necessary traffic.
 - Verify Network Connectivity: Ensure the client can ping the DC’s private IP.
 - Check DNS Settings: Confirm the client uses the DC for DNS lookups.
+- Install AD Domain Services on the Domain Controller
+- Log into your Windows Server (DC1).
+- Promote the Server to a Domain Controller.
+- Restart the Server.
+- Log in with Domain Credentials.
+- Create Organizational Units (OUs).
+- Create Domain Admin User.
+- Join Client Machine to the Domain. 
+- Log into your Windows 10 client.
+- Move Client to the Proper OU.
 
 <h2>Deployment and Configuration Steps</h2>
 
