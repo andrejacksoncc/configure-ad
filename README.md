@@ -331,66 +331,9 @@ This tutorial outlines the implementation of on-premises Active Directory within
 </p>
 <br />
 
-<img width="80%" height="80%" alt="17" src="https://github.com/user-attachments/assets/cd072fcb-689a-4979-94db-0a85b2bb3318" />
+<img width="80%" height="80%" alt="42" src="https://github.com/user-attachments/assets/6d78a364-c8a5-4b86-af77-a365bd35f773" />
 
-- Log into Client-1.
-</p>
-<br />
-
-<img width="80%" height="80%" alt="18" src="https://github.com/user-attachments/assets/d0bf2d90-b6eb-4d25-b400-e4adb431de75" />
-
-- From the start menu open Powershell.
-</p>
-<br />
-
-<img width="80%" height="80%" alt="19" src="https://github.com/user-attachments/assets/d9a309d7-9dbc-4b6e-ab70-2e7bf47dd436" />
-
-- Try to ping Dc-1's private IP address.
-- You should get a response.
-</p>
-<br />
-
-<img width="80%" height="80%" alt="20" src="https://github.com/user-attachments/assets/f62a67c5-a8b2-4557-b166-b5e827f32778" />
-
-- Type in ipconfig /all.
-- DNS server should show DC-1's private IP address.
-</p>
-<br />
-
-<img width="80%" height="80%" alt="21" src="https://github.com/user-attachments/assets/d067ff01-8d75-4b9b-afaa-ff90c4bc298e" />
-
-- Now we are going to install Active Directory.
-- From DC-1's vm click start and then click "Server Mangager".
-</p>
-<br />
-
-<img width="80%" height="80%" alt="22" src="https://github.com/user-attachments/assets/d270bb9d-17bb-4173-b609-cca04c9cb032" />
-
-- Click "Add Roles and Features".
-- Click net until you reach "Server Roles".
-- Choose "Active Directory Domain Services".
-- Click "Add Features".
-</p>
-<br />
-
-<img width="80%" height="80%" alt="23" src="https://github.com/user-attachments/assets/fe261485-f0d8-4c51-8b9b-47d827b82016" />
-
-- Click next until you see "install".
-- Let Active Directory install.
-</p>
-<br />
-
-<img width="80%" height="80%" alt="24" src="https://github.com/user-attachments/assets/dba932e8-0f7a-450a-97eb-1f4c30222273" />
-
-- Back in the Server Manager click the flag with a caution sign in the top right corner.
-- Click "Promote this server to a domain controller".
-</p>
-<br />
-
-<img width="80%" height="80%" alt="25" src="https://github.com/user-attachments/assets/22e5c7a4-1278-4a75-9d3a-64d3de5fa013" />
-
-- Click "Add a new forest".
-- For the Root domain name type: "mydomain.com".
-- Click next.
+- If completed correctly you should get this confirmation prompt.
+- System will restart.
 </p>
 <br />
