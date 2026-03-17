@@ -180,34 +180,217 @@ This tutorial outlines the implementation of on-premises Active Directory within
 </p>
 <br />
 
-<img width="80%" height="80%" alt="2" src="https://github.com/user-attachments/assets/420b4689-74b9-41ec-93bc-dadb4fac8b76" />
+<img width="80%" height="80%" alt="21" src="https://github.com/user-attachments/assets/d067ff01-8d75-4b9b-afaa-ff90c4bc298e" />
 
-- Create a Virtual Network with these specifications.
+- Now we are going to install Active Directory.
+- From DC-1's vm click start and then click "Server Mangager".
 </p>
 <br />
 
-<img width="80%" height="80%" alt="3" src="https://github.com/user-attachments/assets/3fb7b126-2956-49b1-9a69-c233f3836e81" />
+<img width="80%" height="80%" alt="22" src="https://github.com/user-attachments/assets/d270bb9d-17bb-4173-b609-cca04c9cb032" />
 
-- Create a new virtual machine with these specifications.
-- Mkae sure the image is set to "Windows Server 2022".
+- Click "Add Roles and Features".
+- Click net until you reach "Server Roles".
+- Choose "Active Directory Domain Services".
+- Click "Add Features".
 </p>
 <br />
 
-<img width="80%" height="80%" alt="1" src="https://github.com/user-attachments/assets/794092de-b5c8-4315-b957-4b0e44bdd957" />
+<img width="80%" height="80%" alt="23" src="https://github.com/user-attachments/assets/fe261485-f0d8-4c51-8b9b-47d827b82016" />
 
-- Create a new resource group with these specifications.
+- Click next until you see "install".
+- Let Active Directory install.
 </p>
 <br />
 
-<img width="80%" height="80%" alt="2" src="https://github.com/user-attachments/assets/420b4689-74b9-41ec-93bc-dadb4fac8b76" />
+<img width="80%" height="80%" alt="24" src="https://github.com/user-attachments/assets/dba932e8-0f7a-450a-97eb-1f4c30222273" />
 
-- Create a Virtual Network with these specifications.
+- Back in the Server Manager click the flag with a caution sign in the top right corner.
+- Click "Promote this server to a domain controller".
 </p>
 <br />
 
-<img width="80%" height="80%" alt="3" src="https://github.com/user-attachments/assets/3fb7b126-2956-49b1-9a69-c233f3836e81" />
+<img width="80%" height="80%" alt="25" src="https://github.com/user-attachments/assets/22e5c7a4-1278-4a75-9d3a-64d3de5fa013" />
 
-- Create a new virtual machine with these specifications.
-- Mkae sure the image is set to "Windows Server 2022".
+- Click "Add a new forest".
+- For the Root domain name type: "mydomain.com".
+- Click next.
+</p>
+<br />
+
+<img width="80%" height="80%" alt="26" src="https://github.com/user-attachments/assets/beee3c31-44ea-4df5-9c0f-a14979833224" />
+
+- Choose a password.
+- Click next.
+</p>
+<br />
+
+<img width="80%" height="80%" alt="27" src="https://github.com/user-attachments/assets/a1aa9306-52b8-49c8-b611-7986d708babe" />
+
+- Click next until you see install.
+- Let it install.
+</p>
+<br />
+
+<img width="80%" height="80%" alt="28" src="https://github.com/user-attachments/assets/c29bc2f7-9fd7-47ad-a08f-fe752314706d" />
+
+- Once the installation is complete the vm will restart.
+</p>
+<br />
+
+<img width="80%" height="80%" alt="29" src="https://github.com/user-attachments/assets/12c42577-fe2c-4c12-893d-e6b1ca05c372" />
+
+- Log back into DC-1 using the username "mydomain.com\labuser"
+</p>
+<br />
+
+<img width="80%" height="80%" alt="30" src="https://github.com/user-attachments/assets/beb95a34-0ea9-465c-b570-ebb1949fd5f3" />
+
+- Click start and open "Windows Administrative Tools".
+- Click "Active Directory Users and Computers".
+</p>
+<br />
+
+<img width="80%" height="80%" alt="31" src="https://github.com/user-attachments/assets/4f8d223b-8b05-44b0-8729-cef3ebb93d87" />
+
+- Right click mydomain.com and click "New".
+- Click "Organizational Unit".
+</p>
+<br />
+
+<img width="80%" height="80%" alt="32" src="https://github.com/user-attachments/assets/f3f898fc-c5c0-44ec-9cb9-2cadd6659a3f" />
+
+- Name it _EMPLOYEES.
+</p>
+<br />
+
+<img width="80%" height="80%" alt="33" src="https://github.com/user-attachments/assets/5d747b2f-b8c4-4bf5-b24a-70c957c0c9d8" />
+
+- Create another Organizational Unit.
+- Call it _ADMINS.
+</p>
+<br />
+
+<img width="80%" height="80%" alt="34" src="https://github.com/user-attachments/assets/d63c70d1-44aa-47d6-9c18-fc742b4188cb" />
+
+- Right click _ADMINS and click "New"
+- Click "User"
+</p>
+<br />
+
+<img width="80%" height="80%" alt="35" src="https://github.com/user-attachments/assets/dc4222b5-d41b-4e1e-8cbf-dd65a3c4d64b" />
+
+- Create a new user profile for Jane Doe.
+</p>
+<br />
+
+<img width="80%" height="80%" alt="36" src="https://github.com/user-attachments/assets/ccd49326-49b8-4a39-8e73-81b3a71a4944" />
+
+- Create a new password for Jane Doe.
+- Click "next" then "finish".
+</p>
+<br />
+
+<img width="80%" height="80%" alt="37" src="https://github.com/user-attachments/assets/0235f70c-aa2f-4456-927b-f257077a0f82" />
+
+- To make Jane Doe an Admin right click the name then click "Properties".
+</p>
+<br />
+
+<img width="80%" height="80%" alt="38" src="https://github.com/user-attachments/assets/bc6d9563-e52b-4ff2-8816-73d7939894be" />
+
+- Click "Member Of" then click "Add".
+- Type in domain admins and then "Check Names".
+- It should find a domain admins built in group.
+- Click "Ok" then "Apply".
+</p>
+<br />
+
+<img width="80%" height="80%" alt="39" src="https://github.com/user-attachments/assets/208e75e5-b005-4b65-aaa5-ce0c582eab85" />
+
+- Log out of DC-1.
+- Log back into DC-1 as Jane Doe.
+</p>
+<br />
+
+<img width="80%" height="80%" alt="40" src="https://github.com/user-attachments/assets/21498cf7-8233-4532-8e33-f05ec82df440" />
+
+
+- Now we are going to join Client-1's vm to DC-1's domain.
+- From Client-1"s vm right click the start button and click "System".
+- Click "Rename this PC (Advance) then click "Change".
+</p>
+<br />
+
+<img width="80%" height="80%" alt="41" src="https://github.com/user-attachments/assets/a449061b-79e0-4553-ab69-2d214f052287" />
+
+- Under "Member Of" click "Domain".
+- Type in "mydomain.com"
+- Click "Ok".
+- Sign in as Jane Doe.
+</p>
+<br />
+
+<img width="80%" height="80%" alt="17" src="https://github.com/user-attachments/assets/cd072fcb-689a-4979-94db-0a85b2bb3318" />
+
+- Log into Client-1.
+</p>
+<br />
+
+<img width="80%" height="80%" alt="18" src="https://github.com/user-attachments/assets/d0bf2d90-b6eb-4d25-b400-e4adb431de75" />
+
+- From the start menu open Powershell.
+</p>
+<br />
+
+<img width="80%" height="80%" alt="19" src="https://github.com/user-attachments/assets/d9a309d7-9dbc-4b6e-ab70-2e7bf47dd436" />
+
+- Try to ping Dc-1's private IP address.
+- You should get a response.
+</p>
+<br />
+
+<img width="80%" height="80%" alt="20" src="https://github.com/user-attachments/assets/f62a67c5-a8b2-4557-b166-b5e827f32778" />
+
+- Type in ipconfig /all.
+- DNS server should show DC-1's private IP address.
+</p>
+<br />
+
+<img width="80%" height="80%" alt="21" src="https://github.com/user-attachments/assets/d067ff01-8d75-4b9b-afaa-ff90c4bc298e" />
+
+- Now we are going to install Active Directory.
+- From DC-1's vm click start and then click "Server Mangager".
+</p>
+<br />
+
+<img width="80%" height="80%" alt="22" src="https://github.com/user-attachments/assets/d270bb9d-17bb-4173-b609-cca04c9cb032" />
+
+- Click "Add Roles and Features".
+- Click net until you reach "Server Roles".
+- Choose "Active Directory Domain Services".
+- Click "Add Features".
+</p>
+<br />
+
+<img width="80%" height="80%" alt="23" src="https://github.com/user-attachments/assets/fe261485-f0d8-4c51-8b9b-47d827b82016" />
+
+- Click next until you see "install".
+- Let Active Directory install.
+</p>
+<br />
+
+<img width="80%" height="80%" alt="24" src="https://github.com/user-attachments/assets/dba932e8-0f7a-450a-97eb-1f4c30222273" />
+
+- Back in the Server Manager click the flag with a caution sign in the top right corner.
+- Click "Promote this server to a domain controller".
+</p>
+<br />
+
+<img width="80%" height="80%" alt="25" src="https://github.com/user-attachments/assets/22e5c7a4-1278-4a75-9d3a-64d3de5fa013" />
+
+- Click "Add a new forest".
+- For the Root domain name type: "mydomain.com".
+- Click next.
 </p>
 <br />
